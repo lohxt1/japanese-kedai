@@ -4,8 +4,12 @@ import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import StatsUtils from "../three-components/stats";
 import Controls from "../three-components/controls";
 import { Structure } from "../three-components/neonRoom";
-
-const Bloom = lazy(() => import("../three-shaders/bloom"));
+import {
+  EffectComposer,
+  DepthOfField,
+  Noise,
+  Bloom,
+} from "@react-three/postprocessing";
 
 const NeonRoom = (props) => {
   return (
@@ -29,7 +33,23 @@ const NeonRoom = (props) => {
           <Structure width={300} height={80} depth={160} />
         </Suspense>
         <Suspense fallback={null}>
-          <Bloom intensity={0.5} />
+          <EffectComposer>
+            <DepthOfField
+              focusDistance={0}
+              focalLength={0.02}
+              bokehScale={0.5}
+              height={1000}
+            />
+            <Bloom
+              luminanceThreshold={0}
+              luminanceSmoothing={0.1}
+              height={700}
+              intensity={0.5}
+            />
+            {/* <Noise opacity={0.5} /> */}
+          </EffectComposer>
+          {/* <StatsUtils /> */}
+          {/* <Controls /> */}
         </Suspense>
         <Suspense fallback={null}>
           {/* <StatsUtils /> */}
