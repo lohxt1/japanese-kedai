@@ -3,6 +3,12 @@
 <h1 align="center">Japanese Kedai</h1>
 </p>
 
+<p align="center">
+  <br />
+  <br />
+<img align="center" src="https://lohxt1.github.io/_assets/neonroom.png" alt="neonroom"/><br/>
+</p>
+
 ## About The Project
 
 Abstract representation of a Japanese convenient store.
@@ -28,9 +34,3 @@ $ npm install
 # STEP 3: Running the app in dev mode
 $ npm run dev
 ```
-
-<p align="center">
-  <br />
-  <br />
-<img align="center" src="https://lohxt1.github.io/_assets/neonroom.png" alt="neonroom"/><br/>
-</p>
